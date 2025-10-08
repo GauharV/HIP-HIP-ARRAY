@@ -1,1 +1,33 @@
+import java.util.Random;
+import java.util.Arrays;
 
+public class spotify {
+    public static void main(String[] args) {
+        String[] playlist = {
+                "Shake It Off – Taylor Swift",
+                "I Love You – Barney",
+                "Baby Shark – Pinkfong",
+                "Never Gonna Give You Up – Rick Astley",
+                "Axel F (Crazy Frog) – Crazy Frog",
+                "Gangnam Style – PSY",
+                "What Does the Fox Say? – Ylvis"
+        };
+        shuffle(playlist);
+        for (String song:playlist){
+            System.out.println(song);
+        }
+
+    }
+
+    public static void shuffle(String[] playlist) {
+        String[] shuffle=playlist;
+        Random rand = new Random();
+        for (int i = shuffle.length - 1; i > 0; i--) {
+            int j = rand.nextInt(i + 1);
+            String temp = shuffle[i];
+            shuffle[i] = shuffle[j];
+            shuffle[j] = temp;
+        }
+
+    }
+}
