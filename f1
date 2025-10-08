@@ -1,3 +1,9 @@
+/*
+Name:Gauhar
+Date:10/08/25
+Description: It finds integers and tells me which ones are even or odds
+*/
+
 import java.util.Scanner;
 
 public class Arrayprogram {
