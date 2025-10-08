@@ -30,11 +30,6 @@ public class Arrayprogram {
         String askint = getInput("Enter 15 integers with one space between each integer: ");
         String[] list = askint.trim().split(" ");
 
-        if (list.length != 15) {
-            System.out.println("Please enter exactly 15 integers.");
-            return;
-        }
-
         int[] intlist = new int[list.length];
         for (int i = 0; i < list.length; i++) {
             intlist[i] = Integer.parseInt(list[i]);
