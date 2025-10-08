@@ -1,3 +1,9 @@
+/*
+Name:Gauhar
+Date:10/08/25
+Description: It shuffles songs in a random order
+*/
+
 import java.util.Random;
 import java.util.Arrays;
 
