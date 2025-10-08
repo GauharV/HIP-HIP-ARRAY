@@ -1,8 +1,3 @@
-/*
-Name: Gauhar
-Date: 10/2/25
-Description:Prints the even numbers on one line and the odd numbers on another.
-*/
 import java.util.Scanner;
 
 public class Arrayprogram {
@@ -13,44 +8,42 @@ public class Arrayprogram {
         return scanner.nextLine();
     }
 
-    public static int getIntInput(String prompt) {
-        System.out.print(prompt);
-        return scanner.nextInt();
+    public static void getEven(int[] nums) {
+        for (int num : nums) {
+            if (num % 2 == 0) {
+                System.out.print(num + " ");
+            }
+        }
+        System.out.println(); 
     }
 
-    public static void getEven(int[] nums) {
-        int[] enums;
-        enums=new int[15];
-        for(int i=0;i<nums.length;i++){
-            if (i%2==0){
-               enums[i]=nums[i];
-            }
-        }
-        for (int i =0;i< enums.length;i++){
-            System.out.println(enums[i]+" ");
-        }
-    }
     public static void getOdd(int[] nums) {
-        int[] onums;
-        onums=new int[15];
-        for(int i=0;i<nums.length;i++){
-            if (i%2==0){
-                onums[i]=nums[i];
+        for (int num : nums) {
+            if (num % 2 != 0) {
+                System.out.print(num + " ");
             }
         }
-        for (int i =0;i< onums.length;i++){
-            System.out.println(onums[i]+" ");
-        }
+        System.out.println();
     }
 
     public static void main(String[] args) {
-         String askint= getInput("Enter 15 integers with one space between each integer:");
-         String[] list=askint.split("");
-         int[] intlist=new int[list.length];
-         for (int i=0; i<list.length;i++){
-             intlist[i]=Integer.parseInt(list[i]);
-         }
+        String askint = getInput("Enter 15 integers with one space between each integer: ");
+        String[] list = askint.trim().split(" ");
+
+        if (list.length != 15) {
+            System.out.println("Please enter exactly 15 integers.");
+            return;
+        }
+
+        int[] intlist = new int[list.length];
+        for (int i = 0; i < list.length; i++) {
+            intlist[i] = Integer.parseInt(list[i]);
+        }
+
+        System.out.print("Even numbers: ");
         getEven(intlist);
+
+        System.out.print("Odd numbers: ");
         getOdd(intlist);
     }
 }
